@@ -31,6 +31,7 @@ function App() {
   function autosave(currentDeck){
     setDeck(currentDeck);
     localStorage.setItem("deck", JSON.stringify(deck));
+    setIsActive(1);
   }
 
   function addNewCard(event){
