@@ -22,9 +22,21 @@ export default function CardInput(props) {
         props.updateToParent(textareaState);
     }, [textareaState]);
 
+
     return (
         <div className="question-input">
-            <div className="input-num">{props.num}.<FontAwesomeIcon className="trash" icon={faTrash} /></div>
+            <div className="input-num">
+                {props.num}.
+                <FontAwesomeIcon 
+                    className="trash" 
+                    icon={faTrash} 
+                    onClick={
+                        ()=>{
+                            props.deleteCard(textareaState.id)
+                        }}
+                />
+
+            </div>
             <div className="input-description">
                 <span htmlFor="frontText">Front</span>
                 <span htmlFor="backText">Back</span>

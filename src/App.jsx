@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import Topbar from "./components/Topbar"
 import Flashcard from "../src/components/Flashcard"
-import Sidebar from "../src/components/Sidebar"
 import CreateCard from './components/CreateCard/CreateCard'
 
 
@@ -28,6 +27,12 @@ function App() {
     setDeck(currentDeck);
     localStorage.setItem("deck", JSON.stringify(deck));
 }
+
+  function autosave(currentDeck){
+    setDeck(currentDeck);
+    localStorage.setItem("deck", JSON.stringify(deck));
+  }
+
   function addNewCard(event){
     event.preventDefault();
     setDeck(prevState=>{
@@ -73,6 +78,7 @@ function App() {
         deck = {deck}
         save = {save}
         addNewcard = {addNewCard}
+        autosave = {autosave}
       />
     </>
   )
