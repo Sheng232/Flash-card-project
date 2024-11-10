@@ -1,0 +1,103 @@
+
+.flashcard-title-input, .flashcard-description-input{
+    width: 100%;
+    height: 2.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+    border: 1px solid black;
+    border-bottom: 3px solid purple;
+}
+.title-label, .description-label{
+    margin: 1rem;
+}
+.question-input{
+    width: 100%;
+    height: 150px;
+    border: 3px solid gray;
+    border-radius: 10px;
+    padding: 3px;
+    margin-bottom: 1rem;
+}
+.input-num{
+    position: relative;
+    width: 100%;
+    height: 20%;
+    padding: 1rem;
+    background-color: #f2f2f2f2;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid gray;
+}
+.question, .answer{
+    width: 49%;
+    height: 60%;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    border-bottom: 3px solid purple;
+}
+.answer{
+    margin-left: 2%;
+}
+.input-description{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 25%;
+}
+.save-button{
+    margin: 0 auto;
+    width: 80px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: lightgreen;
+}
+.center{
+    text-align: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.add-button{
+    width: 100%;
+    height: 75px;
+    margin-bottom: 1rem;
+    border: 3px solid gray;
+    border-radius: 10px;
+}
+.add-button > span{
+    border-bottom: 3px solid purple;
+}
+.add-button > span:hover{
+    color: rgb(97, 83, 4);
+}
+.dropdown-button{
+    cursor: pointer;
+    font-size: 3rem;
+}
+.trash{
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(-90deg)
+    }
+}
+@keyframes rotateBack{
+    from{
+        transform: rotate(-90deg);
+    }
+    to{
+        transform: rotate(0)
+    }
+}
