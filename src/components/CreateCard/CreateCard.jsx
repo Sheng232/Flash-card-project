@@ -78,13 +78,13 @@ function CreateCard(props){
     return(
         <>
             <h1 className="title center"> Edit existing flashcard set</h1>
-            <div className="flexbox">
+            {/* <div className="flexbox">
                 <button className="save-button" onClick={
                         (event)=>{
                             props.save(childComponentCard, event)
                         }
                     }>Save</button>
-            </div>
+            </div> */}
         
             <FontAwesomeIcon icon={faCaretDown}
                 onClick = {hasRotated} 
