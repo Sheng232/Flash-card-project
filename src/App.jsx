@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Topbar from "./components/Topbar"
 import Flashcard from "../src/components/Flashcard"
 import CreateCard from './components/CreateCard/CreateCard'
-
+import Navbar from "./components/Navbar"
 
 function App() {
   const [isActive, setIsActive] = useState(1);
@@ -22,11 +22,11 @@ function App() {
     ()=>{localStorage.setItem("deck", JSON.stringify(deck)), [deck]}
   );
 
-  function save(currentDeck, event){
-    event.preventDefault()
-    setDeck(currentDeck);
-    localStorage.setItem("deck", JSON.stringify(deck));
-}
+//   function save(currentDeck, event){
+//     event.preventDefault()
+//     setDeck(currentDeck);
+//     localStorage.setItem("deck", JSON.stringify(deck));
+// }
 
   function autosave(currentDeck){
     setDeck(currentDeck);
@@ -68,7 +68,8 @@ function App() {
     });
   
   return (
-    <>
+    <div id="app">
+      <Navbar />
       <Topbar
         length={deck.length}
         activeCard = {isActive}
@@ -77,11 +78,11 @@ function App() {
       <CreateCard 
         length={deck.length}
         deck = {deck}
-        save = {save}
+        // save = {save}
         addNewcard = {addNewCard}
         autosave = {autosave}
       />
-    </>
+    </div>
   )
 }
 

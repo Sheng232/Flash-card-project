@@ -40,6 +40,7 @@ function Flashcard(props) {
     
     return (
         <div
+            id="flashcard"
             className={`container flexbox ${props.isActive}`}
             style={isFlipping ? flipAnimation : fadeLeft ? leftFadeAnimation : fadeRight ? rightFadeAnimation : {} }
         >

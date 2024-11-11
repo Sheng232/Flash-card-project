@@ -76,7 +76,7 @@ function CreateCard(props){
     }
 
     return(
-        <>
+        <div id="create-card">
             <h1 className="title center"> Edit existing flashcard set</h1>
             {/* <div className="flexbox">
                 <button className="save-button" onClick={
@@ -96,9 +96,9 @@ function CreateCard(props){
                 style = {{ display: rotated ? "none" : "block" }}
             >
                 {/*to  be implemented */}
-                {/* <label className="title-label" htmlFor = "title">Flashcard Title</label>
+                <label className="title-label" htmlFor = "title">Flashcard Title</label>
                 <input type="text" id="title" className ="flashcard-title-input" name="title" />
-                <label className="description-label" htmlFor = "description">Flashcard Description</label>
+                {/* <label className="description-label" htmlFor = "description">Flashcard Description</label>
                 <input id="description" className = "flashcard-description-input"/> */}
                 
                 {displayInputCard}
@@ -112,7 +112,7 @@ function CreateCard(props){
                 </button>
 
             </form>
-        </>
+        </div>
     )
 }
 

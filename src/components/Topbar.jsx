@@ -4,7 +4,7 @@ function Topbar(props){
         width: `${((props.activeCard)/props.length)*100}%`
     };
     return(
-        <>
+        <div id="topbar">
             <h1 className="title">Flash Cards</h1>
             <div className="progress-bar">
                 <div className="inner-rectangle" style={innerRectangleLength}> 
@@ -12,7 +12,7 @@ function Topbar(props){
                 </div>
                 <span className="number-of-card-played">{`${props.activeCard} of ${props.length}`}</span>
             </div>
-        </>
+        </div>
     )
 }
 
