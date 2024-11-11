@@ -82,6 +82,11 @@ function App() {
         addNewcard = {addNewCard}
         autosave = {autosave}
       />
+      <footer>
+        Work In Progress
+        <br />
+        Developed by Sheng Jian &#169;
+      </footer>
     </div>
   )
 }

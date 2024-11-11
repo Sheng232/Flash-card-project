@@ -10,7 +10,7 @@ function Navbar (){
                 <FontAwesomeIcon icon={faFolderPlus} />
             </div>
             <div className="github-button">
-            {/* <FontAwesomeIcon icon={faCode} /> */}
+                <a target="_blank" href="https://github.com/Sheng232/Flashcard-project">{`</>`}</a>
             </div>
         
         </div>
