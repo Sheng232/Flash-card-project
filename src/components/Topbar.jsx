@@ -5,7 +5,7 @@ function Topbar(props){
     };
     return(
         <div id="topbar">
-            <h1 className="title">Flash Cards</h1>
+            <h1 className="title">{props.title}</h1>
             <div className="progress-bar">
                 <div className="inner-rectangle" style={innerRectangleLength}> 
                     <span className="percentage"></span>

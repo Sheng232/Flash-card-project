@@ -9,6 +9,8 @@ function CreateCard(props){
     const [childComponentCard, setComponentChildCard] = useState(props.deck);
     //state to keep track of the rotation of the caret button
     const [rotated, setRotated] = useState(false);
+
+
     function updateToParent(updatedCard) {
         setComponentChildCard(prevCards => {
             return prevCards.map(card =>
@@ -74,10 +76,12 @@ function CreateCard(props){
     const backflipAnimation = {
         animation: "rotateBack 0.5s ease forwards",
     }
+    
+
 
     return(
         <div id="create-card">
-            <h1 className="title center"> Edit existing flashcard set</h1>
+            <h1 className="title center"> Edit existing flash card set</h1>
             {/* <div className="flexbox">
                 <button className="save-button" onClick={
                         (event)=>{
@@ -95,9 +99,14 @@ function CreateCard(props){
             <form 
                 style = {{ display: rotated ? "none" : "block" }}
             >
-                {/*to  be implemented */}
+
                 <label className="title-label" htmlFor = "title">Flashcard Title</label>
-                <input type="text" id="title" className ="flashcard-title-input" name="title" />
+                <input type="text" id="title" className ="flashcard-title-input" name="title" 
+                    onChange = {(event)=>{props.setDeckTitle(event)}}
+                    value={props.title}
+                />
+
+                {/*to  be implemented */}
                 {/* <label className="description-label" htmlFor = "description">Flashcard Description</label>
                 <input id="description" className = "flashcard-description-input"/> */}
                 

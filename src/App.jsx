@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar"
 
 function App() {
   const [isActive, setIsActive] = useState(1);
+  const [title, setTitle] = useState(JSON.parse(localStorage.getItem("title")) || "Flash Card");
   const [deck, setDeck] = useState(
     JSON.parse(localStorage.getItem("deck")) || []);
 
@@ -19,8 +20,17 @@ function App() {
     }
   }
   useEffect(
-    ()=>{localStorage.setItem("deck", JSON.stringify(deck)), [deck]}
+    ()=>{
+      localStorage.setItem("deck", JSON.stringify(deck)), [deck]
+    }
   );
+
+  useEffect(
+    ()=>{
+      localStorage.setItem("title", JSON.stringify(title)), [title]
+    }
+  );
+
 
 //   function save(currentDeck, event){
 //     event.preventDefault()
@@ -54,7 +64,10 @@ function App() {
       setIsActive(isActive - 1);
     }
   }
-
+  function setDeckTitle(event){
+    setTitle(event.target.value);
+    localStorage.setItem("title", JSON.stringify(title));
+  }
 
   const displayCard = deck.map(card => {
            return <Flashcard 
@@ -73,6 +86,7 @@ function App() {
       <Topbar
         length={deck.length}
         activeCard = {isActive}
+        title = {title}
       />
       {displayCard}
       <CreateCard 
@@ -81,6 +95,8 @@ function App() {
         // save = {save}
         addNewcard = {addNewCard}
         autosave = {autosave}
+        setDeckTitle = {setDeckTitle}
+        title = {title}
       />
       <footer>
         Work In Progress
