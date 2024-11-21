@@ -1,14 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouseChimney, faFolderPlus,} from "@fortawesome/free-solid-svg-icons";
+import {Link} from "react-router-dom"
+
 function Navbar (){
     return(        
         <div className="navbar">
-            <div className="home-button">
+            <Link to="/Flashcard-project/Home" className="home-button">
                 <FontAwesomeIcon icon={faHouseChimney} />
-            </div>
-            <div className="folder-button">
+            </Link>
+            <Link to="Flashcard-project/Flashcard" className="folder-button">
                 <FontAwesomeIcon icon={faFolderPlus} />
-            </div>
+            </Link>
             <div className="github-button">
                 <a target="_blank" href="https://github.com/Sheng232/Flashcard-project">{`</>`}</a>
             </div>

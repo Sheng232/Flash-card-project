@@ -1,6 +1,6 @@
 import React from "react";
 
-function Flashcard(props) {
+function FlashcardComponent(props) {
     const [isFront, setIsFront] = React.useState(true);
     const [isFlipping, setIsFlipping] = React.useState(false);
     const [fadeLeft, setFadeLeft] = React.useState(false);
@@ -70,4 +70,4 @@ function Flashcard(props) {
     );
 }
 
-export default Flashcard;
+export default FlashcardComponent;
