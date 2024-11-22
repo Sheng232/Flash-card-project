@@ -24,32 +24,36 @@ function CreateCard(props){
             return card.id !== id;
         });
         //loop through the array and correct the id when the delete is called
-        const correctId = deletedState.map((card, index)=>{
-            return {
-                ...card,
-                id : index + 1,
-            }
-        })
-        setComponentChildCard(correctId);
-        props.autosave(childComponentCard);
+        // const correctId = deletedState.map((card, index)=>{
+        //     return {
+        //         ...card,
+        //         id : index + 1,
+        //     }
+        // })
+        setComponentChildCard(deletedState);
+        console.log(deletedState);
     }
 
+    useEffect(() => {
+        setComponentChildCard(props.deck);
+    }, [props.deck]);
+    
     //sync up deleteCard with save
     useEffect(() => {
         props.autosave(childComponentCard); 
     }, [childComponentCard]);
 
-    function matchCard(){
-        setComponentChildCard(prevState=>{
-            return([
-                ...prevState,
-                {frontText: "",
-                 backText: "",
-                 id: prevState.length + 1
-                }
-            ])
-        })
-    }
+    // function matchCard(){
+    //     setComponentChildCard(prevState=>{
+    //         return([
+    //             ...prevState,
+    //             {frontText: "",
+    //              backText: "",
+    //              id: Date.now()
+    //             }
+    //         ])
+    //     })
+    // }
     function hasRotated(){
         setRotated(prevState=>{
             return !prevState;
@@ -57,11 +61,11 @@ function CreateCard(props){
     }
 
     //map the whole deck and return a CardInput component
-    const displayInputCard = props.deck.map(card=>{
+    const displayInputCard = childComponentCard.map((card, index)=>{
         return(
             <CardInput 
                 key={card.id}
-                num={card.id}
+                num={index + 1}
                 front={card.frontText}
                 back={card.backText}
                 updateToParent = {updateToParent}
@@ -69,6 +73,7 @@ function CreateCard(props){
             />
         )
     })
+    
     //animation for the dropdown button
     const flipAnimation = {
         animation: "rotate 0.5s ease forwards",
@@ -82,13 +87,6 @@ function CreateCard(props){
     return(
         <div id="create-card">
             <h1 className="title center"> Edit existing flash card set</h1>
-            {/* <div className="flexbox">
-                <button className="save-button" onClick={
-                        (event)=>{
-                            props.save(childComponentCard, event)
-                        }
-                    }>Save</button>
-            </div> */}
         
             <FontAwesomeIcon icon={faCaretDown}
                 onClick = {hasRotated} 
@@ -105,16 +103,12 @@ function CreateCard(props){
                     onChange = {(event)=>{props.setDeckTitle(event)}}
                     value={props.title}
                 />
-
-                {/*to  be implemented */}
-                {/* <label className="description-label" htmlFor = "description">Flashcard Description</label>
-                <input id="description" className = "flashcard-description-input"/> */}
                 
                 {displayInputCard}
                 <button className="add-button" onClick={
                     (event)=>{
                         props.addNewcard(event);
-                        matchCard()
+                        // matchCard()
                     }
                     }>
                         <span>Add A Card</span>

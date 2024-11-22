@@ -14,7 +14,6 @@ function Navbar (){
             <div className="github-button">
                 <a target="_blank" href="https://github.com/Sheng232/Flashcard-project">{`</>`}</a>
             </div>
-        
         </div>
     )
 }

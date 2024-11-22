@@ -118,13 +118,11 @@ button:hover{
   opacity: 0.7;
 }
 .navbar{
-  top: 0;
   width: 100vw;
   height: 10vh;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  /* position: fixed; */
+  justify-content: space-between;
 
 }
 .navbar:hover{
@@ -139,10 +137,7 @@ button:hover{
   position: absolute;
   left: 50px;
 }
-.folder-button{
-  position: absolute;
-  right: 50px;
-}
+
 .github-button{
   position: absolute;
   right: 150px;
@@ -181,7 +176,14 @@ footer{
 .flashcard-folder:hover{
   background: #d6cccc;
 }
-
+.flashcard-set-title{
+  height: 50px;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
 
 @keyframes flip{
   0%{
