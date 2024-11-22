@@ -5,12 +5,12 @@ import {Link} from "react-router-dom"
 function Navbar (){
     return(        
         <div className="navbar">
-            <Link to="/Flashcard-project/Home" className="home-button">
+            <Link to="/Flashcard-project/" className="home-button">
                 <FontAwesomeIcon icon={faHouseChimney} />
             </Link>
-            <Link to="Flashcard-project/Flashcard" className="folder-button">
+            {/* <Link to="Flashcard-project/Flashcard" className="folder-button">
                 <FontAwesomeIcon icon={faFolderPlus} />
-            </Link>
+            </Link> */}
             <div className="github-button">
                 <a target="_blank" href="https://github.com/Sheng232/Flashcard-project">{`</>`}</a>
             </div>

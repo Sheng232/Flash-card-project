@@ -5,9 +5,9 @@ import CreateCard from '../components/CreateCard/CreateCard'
 
 function Flashcard() {
   const [isActive, setIsActive] = useState(1);
-  const [title, setTitle] = useState(JSON.parse(localStorage.getItem("title")) || "Flash Card");
+  const [title, setTitle] = useState(()=>JSON.parse(localStorage.getItem("title")) || "Flash Card");
   const [deck, setDeck] = useState(
-    JSON.parse(localStorage.getItem("deck")) || []);
+    ()=>JSON.parse(localStorage.getItem("deck")) || []);
 
 
   function nextCard(){

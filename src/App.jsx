@@ -11,8 +11,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element = {<Layout />}>
-          <Route path="/Flashcard-project/Home" element={<Home />}/>
+          <Route path="/Flashcard-project/" element={<Home />}/>
           <Route path="/Flashcard-project/Flashcard" element={<Flashcard />}/>
+          <Route path="/Flashcard-project/Flashcard/:name" element={<Flashcard />}/>
         </Route>
       </Routes>
     </BrowserRouter>
