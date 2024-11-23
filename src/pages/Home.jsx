@@ -34,7 +34,14 @@ function Home() {
         folder.id !== id ? folder : null
       )
     })
-    setFolders(newFolders);
+    setFolders(newFolders.map((folder, index)=>{
+      return(
+        {
+          ...folder,
+          id: index + 1,
+        }
+      )
+    }));
   }
   const displayFolder = folders.map((folder, index)=>{
     return(
