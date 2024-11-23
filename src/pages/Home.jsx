@@ -9,21 +9,25 @@ function Home() {
 
   useEffect(()=>{
     localStorage.setItem("folders", JSON.stringify(folders))
-},[folders]);
+  },[folders]);
 
   function addFolder(){
     const newFolder ={
-      id: folders.length + 1,
+      id: folders.length > 0 ? folders[folders.length - 1].id + 1 : 1,
       title: `folder${folders.length + 1}`,
       deck: []
     }
-    setFolders(prevState =>{
-      return ([
-        ...prevState,
-        newFolder
-      ])
-    })
+    setFolders((prevFolders) => {
+      const updatedFolders = [...prevFolders, newFolder];
+      return updatedFolders.map((folder, index) => ({
+        ...folder,
+        id: index + 1,
+      }));
+    });
   }
+
+  
+
   function deleteFolder(id){
     const newFolders = folders.filter((folder)=> {
       return(
@@ -36,7 +40,7 @@ function Home() {
     return(
       <div className="relative " key={index}>
         <Link
-          to={`/Flashcard-project/Flashcard/${folder.id}`}
+          to={`/Flashcard-project/Flashcard/${index + 1}`}
           className="flashcard-folder"
         >
         <div><FontAwesomeIcon icon={faFolder} /> { folder.title} </div> 
