@@ -20,3 +20,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - CSS
 - React Router Dom
 - FontAwesome
+- Vite
