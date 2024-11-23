@@ -8,9 +8,6 @@ function Navbar (){
             <Link to="/Flashcard-project/" className="home-button">
                 <FontAwesomeIcon icon={faHouseChimney} />
             </Link>
-            {/* <Link to="Flashcard-project/Flashcard" className="folder-button">
-                <FontAwesomeIcon icon={faFolderPlus} />
-            </Link> */}
             <div className="github-button">
                 <a target="_blank" href="https://github.com/Sheng232/Flashcard-project">{`</>`}</a>
             </div>

@@ -123,11 +123,6 @@ function Flashcard() {
         setDeckTitle = {setDeckTitle}
         title = {title}
       />
-      <footer>
-        Work In Progress
-        <br />
-        Developed by Sheng Jian &#169;
-      </footer>
     </div>
   )
 }

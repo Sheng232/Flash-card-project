@@ -6,6 +6,9 @@ export default function Layout(){
         <>
             <Navbar />
             <Outlet />
+            <footer>
+                Developed by Sheng Jian &#169;
+            </footer>
         </>
     )
 }

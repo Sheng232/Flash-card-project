@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFolder, faFolderPlus  } from "@fortawesome/free-solid-svg-icons";
+import { faFolder, faFolderPlus, faDeleteLeft  } from "@fortawesome/free-solid-svg-icons";
 import {useState, useEffect} from "react"
 function Home() {
 
@@ -24,16 +24,31 @@ function Home() {
       ])
     })
   }
-  
-  const displayFolder = folders.map(folder=>{
+  function deleteFolder(id){
+    const newFolders = folders.filter((folder)=> {
+      return(
+        folder.id !== id ? folder : null
+      )
+    })
+    setFolders(newFolders);
+  }
+  const displayFolder = folders.map((folder, index)=>{
     return(
-      <Link
-        key={folder.id}
-        to={`/Flashcard-project/Flashcard/${folder.id}`}
-        className="flashcard-folder"
-      >
-      {folder.title} <FontAwesomeIcon icon={faFolder} />
-    </Link>)
+      <div className="relative " key={index}>
+        <Link
+          to={`/Flashcard-project/Flashcard/${folder.id}`}
+          className="flashcard-folder"
+        >
+        <div><FontAwesomeIcon icon={faFolder} /> { folder.title} </div> 
+        </Link>
+        <FontAwesomeIcon 
+          className="delete-folder-button" 
+          icon={faDeleteLeft} 
+          onClick={()=>{
+            deleteFolder(folder.id)
+          }}  
+        />
+    </div> )
   })
   const title = JSON.parse(localStorage.getItem("title"));
 

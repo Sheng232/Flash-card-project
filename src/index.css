@@ -122,8 +122,8 @@ button:hover{
   height: 10vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
+  justify-content: space-around;
+  gap: 60vw;
 }
 .navbar:hover{
   background-color: #f2f2f2f2;
@@ -133,30 +133,28 @@ button:hover{
   font-size: 2.5rem;
   cursor: pointer;
 }
-.home-button{
-  position: absolute;
-  left: 50px;
-}
 
-.github-button{
-  position: absolute;
-  right: 150px;
-}
 .github-button > a{
   text-decoration: none;
 }
 .github-button > a:hover, .home-button:hover, .folder-button:hover{
-  color: gold;
+  opacity: 0.8;
 }
 footer{
   margin-top: 100px;
   margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .flashcard-set{
   height: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+.relative{
+  position: relative;
 }
 .flashcard-folder{
   display: flex;
@@ -184,7 +182,15 @@ footer{
   align-items: center;
   gap: 25px;
 }
-
+.delete-folder-button{
+  font-size: 1.5rem;
+  position: absolute;
+  right: 30px;
+  top: 35px;
+}
+.delete-folder-button:hover{
+    color:#861212;
+}
 @keyframes flip{
   0%{
       transform: rotateY(0deg);
