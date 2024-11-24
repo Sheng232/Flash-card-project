@@ -9,9 +9,9 @@ function App() {
   return(
     <BrowserRouter>
       <Routes>
-        <Route element = {<Layout />}>
-          <Route path="/Flashcard-project/" element={<Home />}/>
-          <Route path="/Flashcard-project/Flashcard/:id" element={<Flashcard />}/>
+        <Route path="/" element = {<Layout />}>
+          <Route index element={<Home />}/>
+          <Route path="/Flashcard/:id" element={<Flashcard />}/>
         </Route>
       </Routes>
     </BrowserRouter>
