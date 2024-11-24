@@ -13,9 +13,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Built with
 
 - React
-- Javascript
-- JSX
-- CSS
 - React Router Dom
 - FontAwesome
 - Vite
