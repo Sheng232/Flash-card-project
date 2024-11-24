@@ -10,13 +10,11 @@ This is a simple Flash Card Application to study for tests and quizzes
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## My process
-
 ### Built with
 
-- React.js
+- React
 - Javascript
-- HTML
+- JSX
 - CSS
 - React Router Dom
 - FontAwesome

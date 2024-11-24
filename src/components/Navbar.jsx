@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 function Navbar (){
     return(        
         <div className="navbar">
-            <Link to="/" className="home-button">
+            <Link to="/Flashcard-project/" className="home-button">
                 <FontAwesomeIcon icon={faHouseChimney} />
             </Link>
             <div className="github-button">

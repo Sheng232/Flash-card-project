@@ -47,7 +47,7 @@ function Home() {
     return(
       <div className="relative " key={index}>
         <Link
-          to={`Flashcard/${index + 1}`}
+          to={`/Flashcard-project/Flashcard/${index + 1}`}
           className="flashcard-folder"
         >
         <div><FontAwesomeIcon icon={faFolder} /> { folder.title} </div> 
